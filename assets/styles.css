@@ -1,7 +1,8 @@
+/* General Styles */
 html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #e9f5ff;
     color: #333;
     height: 100%;
@@ -9,6 +10,35 @@ html, body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+header {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -41,6 +71,11 @@ h2 {
     border-radius: 50%;
     margin-bottom: 20px;
     border: 3px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.about .profile-picture:hover {
+    transform: scale(1.1);
 }
 
 .contact-button {
@@ -72,4 +107,29 @@ a:hover {
 
 section {
     margin-bottom: 40px;
+}
+
+footer {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+footer a:hover {
+    color: #ccc;
 }
