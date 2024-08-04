@@ -20,6 +20,12 @@
             </ul>
         </nav>
     </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dylan Hyrkas</h1>
+            <p>3D Printing, Laser Engraving, and Plasma Cutting Expert</p>
+        </div>
+    </section>
     <main>
         <section id="about" class="about">
             <h1>About Dylan Hyrkas</h1>
@@ -35,12 +41,34 @@
             <p><i class="fas fa-tools"></i> Owner of an Ender 3D printer with an upgraded board and custom firmware.</p>
             <p><i class="fas fa-rocket"></i> Was able to create a resume and build a website with it with only 3 hours of going to meet a potential employer.</p>
         </section>
+        <section id="skills-progress" class="skills-progress">
+            <div class="skill">
+                <p>Python</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 25%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>C++</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 20%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 23%;"></div>
+                </div>
+            </div>
+        </section>
         <section id="experience" class="experience">
             <h2>Experience</h2>
-            <p><i class="fas fa-briefcase"></i> Designed and 3D printed a specialized tool for Mohawk Tech.</p>
-            <p><i class="fas fa-briefcase"></i> Produced 3D printed components for Somero.</p>
-            <p><i class="fas fa-briefcase"></i> Worked at Motion Motors for approximately two years.</p>
-            <p><i class="fas fa-briefcase"></i> Currently employed at Paul Hyrkas Construction (PHC) since May 5th.</p>
+            <div class="experience-item">
+                <p><i class="fas fa-briefcase"></i> Designed and 3D printed a specialized tool for Mohawk Tech.</p>
+                <p><i class="fas fa-briefcase"></i> Produced 3D printed components for Somero.</p>
+                <p><i class="fas fa-briefcase"></i> Worked at Motion Motors for approximately two years.</p>
+                <p><i class="fas fa-briefcase"></i> Currently employed at Paul Hyrkas Construction (PHC) since May 5th.</p>
+            </div>
         </section>
         <section id="education" class="education">
             <h2>Education</h2>
@@ -59,5 +87,15 @@
             <a href="https://www.linkedin.com/in/dylan-hyrkas" target="_blank"><i class="fab fa-linkedin"></i></a>
         </p>
     </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
