@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/script.js"></script>
 </head>
 <body>
     <header>
@@ -19,7 +20,13 @@
                 <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=dylhyrkas@gmail.com" target="_blank">Contact</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="color-scheme-slider">
+            <label for="color-picker">Color Scheme:</label>
+            <input type="color" id="color-picker" value="#007bff">
+            <input type="text" id="custom-color" placeholder="#007bff">
+            <button id="apply-color">Apply</button>
+        </div>
+    </header>    
     <section class="hero">
         <div class="hero-content">
             <h1>Dylan Hyrkas</h1>
@@ -87,15 +94,6 @@
             <a href="https://www.linkedin.com/in/dylan-hyrkas" target="_blank"><i class="fab fa-linkedin"></i></a>
         </p>
     </footer>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 </html>

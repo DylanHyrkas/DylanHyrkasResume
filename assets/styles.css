@@ -1,3 +1,8 @@
+:root {
+    --main-color: #007bff;
+    --secondary-color: #0056b3;
+}
+
 /* Resetting some default browser styles */
 * {
     margin: 0;
@@ -13,7 +18,7 @@ html, body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: var(--main-color);
     padding: 10px 0;
     text-align: center;
     position: fixed;
@@ -35,6 +40,43 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
+}
+
+.color-scheme-slider {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.color-scheme-slider label {
+    color: white;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.color-scheme-slider {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.color-scheme-slider label {
+    color: white;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.color-scheme-slider input[type="color"],
+.color-scheme-slider input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.color-scheme-slider button {
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .hero {
@@ -69,8 +111,9 @@ main {
 }
 
 h1, h2 {
-    color: #007bff;
+    color: var(--main-color);
 }
+
 
 h1 {
     margin-bottom: 20px;
@@ -86,7 +129,7 @@ h2 {
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 3px solid #007bff;
+    border: 3px solid var(--main-color);
 }
 
 .skills .skill {
@@ -106,7 +149,7 @@ h2 {
 
 .progress {
     height: 20px;
-    background-color: #007bff;
+    background-color: var(--main-color);
 }
 
 .contact-button {
@@ -117,7 +160,7 @@ h2 {
 .contact-button a {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #007bff;
+    background-color: var(--main-color);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -125,7 +168,7 @@ h2 {
 }
 
 footer {
-    background-color: #007bff;
+    background-color: var(--main-color);
     color: white;
     text-align: center;
     padding: 10px 0;
