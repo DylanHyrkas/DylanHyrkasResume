@@ -1,6 +1,7 @@
+/* Root variables for colors */
 :root {
-    --main-color: #007bff;
-    --secondary-color: #0056b3;
+    --main-color: #D6D6D6;
+    --secondary-color: #000000;
 }
 
 /* Resetting some default browser styles */
@@ -12,9 +13,10 @@
 
 html, body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #e9f5ff;
+    color: var(--secondary-color);
+    background-color: var(--main-color);
     height: 100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -37,7 +39,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -48,18 +50,7 @@ header nav ul li a {
 }
 
 .color-scheme-slider label {
-    color: white;
-    font-size: 1em;
-    margin-right: 10px;
-}
-
-.color-scheme-slider {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.color-scheme-slider label {
-    color: white;
+    color: var(--secondary-color);
     font-size: 1em;
     margin-right: 10px;
 }
@@ -73,20 +64,100 @@ header nav ul li a {
 .color-scheme-slider button {
     padding: 5px 10px;
     background-color: var(--main-color);
-    color: white;
+    color: var(--secondary-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+/* Positioning main content to the left */
+main {
+    margin-top: 100px;
+    padding: 20px;
+    max-width: 600px; /* Adjust width as needed */
+    margin-left: 5%; /* Left positioning */
+    margin-right: auto;
+}
+
+/* Make text responsive */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+p, a {
+    font-size: 1.2em;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, a {
+        font-size: 1em;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p, a {
+        font-size: 0.9em;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* Other styles for hero section */
 .hero {
     background: url('assets/images/hero.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the left */
     align-items: center;
-    color: white;
-    text-align: center;
+    background-color: var(--main-color);
+    text-align: left; /* Left align text */
+    padding-left: 5%; /* Padding for the left alignment */
 }
 
 .hero-content {
@@ -95,81 +166,31 @@ header nav ul li a {
     border-radius: 10px;
 }
 
-.hero h1 {
-    font-size: 4em;
+/* Style adjustments for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 2%;
+    }
+
+    main {
+        margin-left: 3%;
+    }
 }
 
-.hero p {
-    font-size: 1.5em;
+@media (max-width: 480px) {
+    .hero {
+        padding-left: 1%;
+    }
+
+    main {
+        margin-left: 2%;
+    }
 }
 
-main {
-    margin-top: 100px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h1, h2 {
-    color: var(--main-color);
-}
-
-
-h1 {
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-.about .profile-picture {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    border: 3px solid var(--main-color);
-}
-
-.skills .skill {
-    margin-bottom: 15px;
-}
-
-.skills .skill p {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.progress-bar {
-    background-color: #e9ecef;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    height: 20px;
-    background-color: var(--main-color);
-}
-
-.contact-button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.contact-button a {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--main-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-}
-
+/* Additional styles for footer and other sections */
 footer {
     background-color: var(--main-color);
-    color: white;
+    color: var(--secondary-color);
     text-align: center;
     padding: 10px 0;
     margin-top: 30px;
@@ -180,6 +201,54 @@ footer p {
 }
 
 footer a {
-    color: white;
+    color: var(--secondary-color);
     margin: 0 10px;
 }
+
+.about .profile-picture {
+    width: 30%; /* Makes the image responsive */
+    max-width: 150px; /* Ensures the image doesn't get too large */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--secondary-color);
+}
+
+
+
+
+
+
+.button-89 {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: var(--main-color); /* Use the main color */
+  
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--secondary-color); /* Use the secondary color for the text */
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--secondary-color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-89:hover,
+  .button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--secondary-color);
+    outline-offset: .05em;
+  }
+  
+  .button-89:active {
+    background: var(--secondary-color);
+    color: #fff; /* Keep white text on active */
+  }
+  

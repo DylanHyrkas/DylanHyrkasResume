@@ -1,28 +1,18 @@
-document.getElementById('apply-color').addEventListener('click', function() {
-    const colorPickerValue = document.getElementById('color-picker').value;
-    const customColorValue = document.getElementById('custom-color').value || colorPickerValue;
-    const color = customColorValue.startsWith('#') ? customColorValue : `#${customColorValue}`;
-
-    document.documentElement.style.setProperty('--main-color', color);
-    document.documentElement.style.setProperty('--secondary-color', shadeColor(color, -20));
+// Apply primary color directly from the color picker
+document.getElementById('color-picker-primary').addEventListener('input', function() {
+    const primaryColor = this.value;
+    document.documentElement.style.setProperty('--main-color', primaryColor);
 });
 
-function shadeColor(color, percent) {
-    let R = parseInt(color.substring(1, 3), 16);
-    let G = parseInt(color.substring(3, 5), 16);
-    let B = parseInt(color.substring(5, 7), 16);
+// Apply secondary color directly from the color picker
+document.getElementById('color-picker-secondary').addEventListener('input', function() {
+    const secondaryColor = this.value;
+    document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+});
 
-    R = parseInt(R * (100 + percent) / 100);
-    G = parseInt(G * (100 + percent) / 100);
-    B = parseInt(B * (100 + percent) / 100);
-
-    R = (R < 255) ? R : 255;
-    G = (G < 255) ? G : 255;
-    B = (B < 255) ? B : 255;
-
-    const RR = ((R.toString(16).length === 1) ? '0' + R.toString(16) : R.toString(16));
-    const GG = ((G.toString(16).length === 1) ? '0' + G.toString(16) : G.toString(16));
-    const BB = ((B.toString(16).length === 1) ? '0' + B.toString(16) : B.toString(16));
-
-    return `#${RR}${GG}${BB}`;
-}
+// Update primary color based on text input or color picker
+document.getElementById('custom-color-primary').addEventListener('input', function() {
+    const customColorValue = this.value;
+    const primaryColor = customColorValue.startsWith('#') ? customColorValue : `#${customColorValue}`;
+    document.documentElement.style.setProperty('--main-color', primaryColor);
+});
